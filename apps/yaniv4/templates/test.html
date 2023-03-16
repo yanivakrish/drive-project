@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<!-- Add your stylesheet here -->
+</head>
+<body>
+	<header>
+		<!-- Add your header content here -->
+	</header>
+	<main>
+		<h1>Login</h1>
+		<form action="/usb" id="usb" >
+			<input type="hidden" name="usb" value="usb()">
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email1" required>
+			<label for="password" id="Ipassword">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<label for="serial-number" id="Iserial-number">USB Drive Serial Number:</label>
+			<input type="text" id="serial-number" name="serial-number" required>
+			<label for="remember-me">Remember me:</label>
+			<input type="checkbox" id="remember-me" name="remember-me">
+			<button type="submit" value="submit">Log In</button>
+		</form>
+		<p>Forgot password? <a href="#">Click here</a></p>
+		<!-- Add your call to action content here -->
+	</main>
+	<button onclick="myFunction()">Try it</button>
+
+	<!--<footer>
+		 Add your footer content here
+	</footer> -->
+
+	<script>
+		function myFunction2() {
+  			alert(email);
+		}
+		function myFunction() {
+  			email = document.getElementById(usb);
+  			myFunction2(email)
+		}
+	</script>
+</body>
+</html>

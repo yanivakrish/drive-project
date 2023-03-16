@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>File Browser 25 bottom right 10</title>
+    <style>
+      .entry {
+        display: flex;
+        align-items: bottom;
+        height: 30px;
+      }
+      .entry-name {
+        margin-right: 10px;
+        line-height: 30px;
+      }
+      .entry-buttons {
+        display: flex;
+      }
+      .entry-buttons button {
+        margin-right: 10px;
+        height: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Files</h1>
+    {% if parent_dir %}
+    <p><a href="/change-directory/{{ parent_dir }}">Up</a></p>
+    {% endif %}
+    <ul>
+      {% for entry in entries %}
+      <li>
+        <div class="entry">
+          <div class="entry-name">
+            {% if entry.is_dir %}
+            <a href="/change-directory/{{ entry.name }}">{{ entry.name }}/</a>
+            {% else %}
+            <a href="/files/{{ entry.name }}">{{ entry.name }}</a>
+            {% endif %}
+          </div>
+          <div class="entry-buttons">
+            <form action="/delete-entry" method="post">
+              <input type="hidden" name="entry_name" value="{{ entry.name }}">
+              <button type="submit">Delete</button>
+            </form>
+            <form action="/rename-entry" method="post">
+              <input type="hidden" name="entry_name" value="{{ entry.name }}">
+              <button type="submit">Rename</button>
+              <input type="text" name="new_name">
+            </form>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
