@@ -1,0 +1,23 @@
+.container {
+  width: 7rem;
+  height: 12rem;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.fileName {
+  width: 100%;
+}
+.fileId {
+  width: 100%;
+}
+
+.downloadIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
