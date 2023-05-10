@@ -3,6 +3,7 @@ import style from './card.module.css';
 import { FileReponse } from '../../store';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import axios from 'axios';
+import fileDownload from 'js-file-download';
 
 interface CardProps {
   data: FileReponse;
@@ -16,7 +17,7 @@ export const Card: FC<CardProps> = ({ data }) => {
       responseType: 'blob',
       data: { id },
     }).then((response) => {
-      fileDownload(response.data, 'file');
+      fileDownload(response.data, data.filename);
       console.log(response);
     });
   };
@@ -24,7 +25,6 @@ export const Card: FC<CardProps> = ({ data }) => {
   return (
     <div className={style.container}>
       <div className={style.fileName}>{data.filename}</div>
-      <div className={style.fileId}>{data.id}</div>
       <ArrowDownTrayIcon
         className={style.downloadIcon}
         onClick={() => handleClick(data.id)}
