@@ -1,19 +1,22 @@
 .container {
   height: 100%;
   width: 100%;
-  background-color: aqua;
+  background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
 .inputContainer {
-  width: 100%;
+  width: 80%;
   height: 10%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #E4E5F1;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .input {
