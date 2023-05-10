@@ -25,7 +25,6 @@ export const Card: FC<CardProps> = ({ data }) => {
   return (
     <div className={style.container}>
       <div className={style.fileName}>{data.filename}</div>
-      <div className={style.fileId}>{data.id}</div>
       <ArrowDownTrayIcon
         className={style.downloadIcon}
         onClick={() => handleClick(data.id)}

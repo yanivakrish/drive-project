@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { filesReducer } from './slices';
 import { serverApi } from './services';
+import { userInfoReducer } from './slices';
 
 export const store = configureStore({
   reducer: {
-    files: filesReducer,
+    userInfo: userInfoReducer,
     [serverApi.reducerPath]: serverApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

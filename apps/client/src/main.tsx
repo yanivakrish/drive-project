@@ -2,16 +2,32 @@ import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import { App } from './app';
 import { store } from './store';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { FilesPage, LoginPage } from './features';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const router = createBrowserRouter([
+  {
+    path: 'login',
+    element: <LoginPage />,
+  },
+  {
+    path: '/',
+    element: <FilesPage />,
+  },
+]);
+
 root.render(
   <StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </GoogleOAuthProvider>
   </StrictMode>
 );
