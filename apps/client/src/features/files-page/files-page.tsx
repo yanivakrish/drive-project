@@ -16,7 +16,7 @@ export const FilesPage: FC = () => {
     }
   }, [email, navigate]);
 
-  const { data, isLoading, refetch } = useGetFilesQuery();
+  const { data, isLoading, refetch } = useGetFilesQuery({ email });
   const [file, setFile] = useState<File>();
 
   if (isLoading || !data) {
@@ -41,6 +41,7 @@ export const FilesPage: FC = () => {
               if (file) {
                 const formData = new FormData();
                 formData.append('file', file);
+                formData.append('email', email);
                 await axios.post(
                   'http://localhost:5000/upload-file',
                   formData,
