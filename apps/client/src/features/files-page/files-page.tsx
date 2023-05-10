@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import style from './files-page.module.css';
+import { Card, FilesCard } from '../../components';
 import { useGetFilesQuery } from '../../store';
-import { Card } from '../../components';
+import style from './files-page.module.css';
 
 export const FilesPage: FC = () => {
   const { data, isLoading } = useGetFilesQuery();
@@ -11,9 +11,11 @@ export const FilesPage: FC = () => {
   } else {
     return (
       <div className={style.container}>
-        {data?.map((data) => (
-          <Card key={data.id} data={data}/>
-        ))}
+        <FilesCard>
+          {data?.map((data) => (
+            <Card key={data.id} data={data} />
+          ))}
+        </FilesCard>
       </div>
     );
   }

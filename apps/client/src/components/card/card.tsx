@@ -1,24 +1,25 @@
-import { FC } from 'react';
-import style from './card.module.css';
-import { FileReponse } from '../../store';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import axios from 'axios';
+import fileDownload from 'js-file-download';
+import { FC } from 'react';
+import { FileResponse } from '../../store';
+import style from './card.module.css';
 
 interface CardProps {
-  data: FileReponse;
+  data: FileResponse;
 }
 
 export const Card: FC<CardProps> = ({ data }) => {
   const handleClick = async (id: string) => {
-    axios({
-      url: 'http://localhost:5000/download-file',
-      method: 'POST',
-      responseType: 'blob',
-      data: { id },
-    }).then((response) => {
-      fileDownload(response.data, 'file');
-      console.log(response);
-    });
+    axios
+      .post(
+        'http://localhost:5000/download-file',
+        { id },
+        { responseType: 'blob' }
+      )
+      .then((response) => {
+        fileDownload(response.data, data.filename);
+      });
   };
 
   return (

@@ -1,13 +1,13 @@
 import { serverApi } from './server.api';
 
-export interface FileReponse {
+export interface FileResponse {
   id: string;
   filename: string;
 }
 
 export const filesApi = serverApi.injectEndpoints({
   endpoints: (build) => ({
-    getFiles: build.query<FileReponse[], void>({
+    getFiles: build.query<FileResponse[], void>({
       query: () => ({ url: 'get-files' }),
     }),
   }),

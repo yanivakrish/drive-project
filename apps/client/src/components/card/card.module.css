@@ -2,7 +2,7 @@
   width: 7rem;
   height: 12rem;
   background-color: darkgray;
-  display: flex;
+  display: grid;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -12,6 +12,7 @@
 .fileName {
   width: 100%;
 }
+
 .fileId {
   width: 100%;
 }
