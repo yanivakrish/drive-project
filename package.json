@@ -57,6 +57,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^9.0.0",
+    "@react-oauth/google": "^0.11.0",
     "@reduxjs/toolkit": "^1.9.3",
     "axios": "^1.4.0",
     "js-file-download": "^0.4.12",
