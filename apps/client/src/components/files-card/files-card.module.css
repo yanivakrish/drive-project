@@ -1,0 +1,16 @@
+.gridContainer {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 10rem);
+    grid-template-rows: repeat(auto-fill, 15rem);
+    grid-gap: 1rem;
+    overflow: visible;
+    background-color: #D2D3DB;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    justify-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
