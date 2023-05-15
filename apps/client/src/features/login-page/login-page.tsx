@@ -20,7 +20,7 @@ export const LoginPage: FC = () => {
   return (
     <div className={style.container}>
       <div className={style.label}>
-        To use the file service storage, please log in!
+        To use the file service storage, please log in by clicking the button below.
       </div>
       <GoogleLogin
         onSuccess={(res) => {
